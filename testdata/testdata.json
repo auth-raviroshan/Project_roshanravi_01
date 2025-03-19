@@ -1,0 +1,76 @@
+{
+    "register": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "neo767@gmail.com",
+        "country": "United States",
+        "phoneNo": "7021234567",
+        "password": "Ts06er7125@123"
+    },
+    "address": {
+        "streetAddress": "123 Main St",
+        "AdditionalStreetAddress": "Apt 4B",
+        "state": "California",
+        "city": "Los Angeles",
+        "zipcode": "90001",
+        "country": "United States"
+    },
+    "highSchool": {
+        "schoolName": "ABC High School",
+        "schoolAddress": "456 School Rd",
+        "additionalSchoolAddress": "",
+        "city": "New York",
+        "state": "New York",
+        "zipcode": "10001",
+        "gpa": "3.8",
+        "graduationYear": "2025"
+    },
+    "activities": [
+        {
+            "activityName": "Football",
+            "yearsInvolved": "3",
+            "leadershipRole": "Team Captain",
+            "description": "Led the school team to regional finals."
+        },
+        {
+            "activityName": "Science Club",
+            "yearsInvolved": "2",
+            "leadershipRole": "Vice President",
+            "description": "Organized science fairs and robotics competitions."
+        },
+        {
+            "activityName": "Cricket",
+            "yearsInvolved": "3",
+            "leadershipRole": "Team Captain",
+            "description": "Led the school team to regional finals."
+        },
+        {
+            "activityName": "Swimming",
+            "yearsInvolved": "2",
+            "leadershipRole": "Vice President",
+            "description": "Organized swimming competetions."
+        }
+    ],
+    "essay": {
+        "Cars":{
+            "essay":"Cars",
+            "assert":"Essay about Cars",
+            "description":"I love cars because they bring joy."
+          },
+          "Animals":{
+            "essay":"Animals",
+            "assert":"Essay about Animals",
+            "description":"I love cars because they bring joy."
+          },
+          "School":{
+            "essay":"School",
+            "assert":"Essay about School",
+            "description":"I love cars because they bring joy."
+          },
+          "Other":{
+            "essay":"Other",
+            "assert":"Provide an essay about any",
+            "description":"Write about anything you like the most"
+          }
+    }
+}
