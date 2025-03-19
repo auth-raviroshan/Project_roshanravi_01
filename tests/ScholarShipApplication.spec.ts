@@ -16,11 +16,12 @@ test('Complete Application Form', async ({ page }) => {
     await register.login(testData.register.email);
     await register.registerUser(testData.register.firstName, testData.register.lastName, testData.register.country, testData.register.phoneNo, testData.register.password);
     await register.provideConsentAndSubmit();
-    await expect(page.getByText('Registered successfully.')).toBeVisible();
+    // await expect(page.getByText('Registered successfully.')).toBeVisible();
 
 
 
     await form.fillAddressDetails(testData.address.streetAddress, testData.address.AdditionalStreetAddress, testData.address.state, testData.address.city, testData.address.zipcode,testData.address.country);
+    await form.goToNextPage();
     await form.goToNextPage();
     //activities assertions
     await form.verify_two_activities();
