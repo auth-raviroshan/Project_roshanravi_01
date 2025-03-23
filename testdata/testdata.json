@@ -2,10 +2,10 @@
     "register": {
         "firstName": "John",
         "lastName": "Doe",
-        "email": "neo999@gmail.com",
+        "email": "leo33@gmail.com",
         "country": "United States",
         "phoneNo": "7021234567",
-        "password": "Ts06er7125@123"
+        "password": "Tp06ui7995@123"
     },
     "address": {
         "streetAddress": "123 Main St",
@@ -60,12 +60,12 @@
           "Animals":{
             "essay":"Animals",
             "assert":"Essay about Animals",
-            "description":"I love cars because they bring joy."
+            "description":"I love Animals because they bring joy."
           },
           "School":{
             "essay":"School",
             "assert":"Essay about School",
-            "description":"I love cars because they bring joy."
+            "description":"I love School because they educate us."
           },
           "Other":{
             "essay":"Other",

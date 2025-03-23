@@ -1,18 +1,36 @@
 import { Page, expect } from '@playwright/test';
 
 export class ReviewPage {
-    constructor(private page: Page) {}
 
-    async validateNoEditAllowed() {
-        const isEditButtonVisible = await this.page.isVisible('#edit');
-        expect(isEditButtonVisible).toBe(false);
+    readonly page: Page;
+    readonly continueApplication;
+    readonly submitButton;
+    readonly submitBtn;
+
+    
+    constructor(page: Page) {
+        this.page = page;
+        this.continueApplication = page.getByRole('link', { name: 'Continue Application' });
+        this.submitButton = page.getByRole('button', { name: 'Submit' });
+        this.submitBtn = page.getByRole('button', { name: 'Submit' });
     }
 
-    async submitApplication() {
-        await this.page.getByRole('button', { name: 'Submit' }).click();
+    async validateNoEditAllowed(url: string) {
+        await this.page.goto(url);
+        await this.page.waitForTimeout(5000);
+        const isContinueDisabled = await this.continueApplication.getAttribute('data-disabled');
+        expect(isContinueDisabled).toBeTruthy();
+        const isSubmitDisabled = await this.submitButton.isDisabled();
+        expect(isSubmitDisabled).toBeTruthy();
     }
-    async get_page_url() {
-        const pageURL = this.page.url();
-        await this.page.goto(pageURL);
-      }
+
+    async submitApplication(): Promise<string> {
+        await this.submitBtn.waitFor({ state: 'visible' });
+        const pageUrl = this.page.url();
+        await this.submitBtn.click();
+        await this.page.waitForTimeout(7000);
+        return pageUrl;
+    }
+
+    
 }
