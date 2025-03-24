@@ -1,4 +1,4 @@
-import { Page, expect } from '@playwright/test';
+import { Locator, Page, expect } from '@playwright/test';
 
 export class ReviewPage {
 
@@ -7,7 +7,7 @@ export class ReviewPage {
     readonly submitButton;
     readonly submitBtn;
 
-    
+
     constructor(page: Page) {
         this.page = page;
         this.continueApplication = page.getByRole('link', { name: 'Continue Application' });
@@ -32,5 +32,13 @@ export class ReviewPage {
         return pageUrl;
     }
 
+    async getCurrentPage(locator:Locator): Promise<string> {
+        await this.page.waitForTimeout(3000);
+        await Promise.all([
+            this.page.waitForNavigation({ timeout: 10000 }),
+            locator.click() 
+        ]);
+        return this.page.url();
+    }
     
 }

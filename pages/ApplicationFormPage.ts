@@ -67,7 +67,6 @@ export class ApplicationFormPage {
         await this.zipcode.fill(zipcode);
         await this.country.click();
         await this.page.getByRole('option', { name: country }).click();
-        await this.goToNextPage();
     }
 
     async fillHighSchoolDetails(schoolName: string, address: string, city: string, state: string, zipcode: string, gpa: string, graduationYear: string, filePath: string) {
@@ -82,7 +81,6 @@ export class ApplicationFormPage {
         await this.passout.fill(graduationYear);
         await this.uploadTranscript(filePath);
         await this.transcript.waitFor({ state: 'visible', timeout: 10000 });
-        await this.goToNextPage();
     }
 
     async addExtracurricularActivity(name: string, years: string, leadership: string, description: string) {
