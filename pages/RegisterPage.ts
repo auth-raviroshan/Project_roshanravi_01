@@ -58,8 +58,8 @@ export class RegisterPage {
     }
 
     async generateUniqueEmail(domain: string = "testmail.com"): Promise<string> {
-        const timestamp = Date.now(); 
-        const randomNum = Math.floor(Math.random() * 10000); 
+        const timestamp = Date.now();
+        const randomNum = Math.floor(Math.random() * 10000);
         return `user_${timestamp}_${randomNum}@${domain}`;
     }
 }

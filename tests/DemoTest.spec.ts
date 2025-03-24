@@ -41,7 +41,7 @@ test.describe.serial('Scholarship Application Tests', () => {
         }
     });
 
-    test('User Registration', async () => {
+    test('Student Registration', async () => {
 
         await page.goto(`https://apply.mykaleidoscope.com/program/sdet-test-scholarship`);
 
@@ -77,7 +77,7 @@ test.describe.serial('Scholarship Application Tests', () => {
         fs.writeFileSync(stateFile, JSON.stringify({ currentUrl }));
     });
 
-    test('Extra Curricular Activities', async () => {
+    test('Student Extra Curricular Activities', async () => {
 
         await page.goto(currentUrl);
         await form.verifyActivities();
@@ -96,7 +96,7 @@ test.describe.serial('Scholarship Application Tests', () => {
         fs.writeFileSync(stateFile, JSON.stringify({ currentUrl }));
     });
 
-    test('High School Details', async () => {
+    test('Student High School Details', async () => {
         await page.goto(currentUrl);
 
         await form.fillHighSchoolDetails(
@@ -114,7 +114,7 @@ test.describe.serial('Scholarship Application Tests', () => {
         fs.writeFileSync(stateFile, JSON.stringify({ currentUrl }));
     });
 
-    test('Essay Details', async () => {
+    test('Student Essay Information Details', async () => {
         await page.goto(currentUrl);
 
         for (const key in testData.essay) {
@@ -128,7 +128,7 @@ test.describe.serial('Scholarship Application Tests', () => {
         fs.writeFileSync(stateFile, JSON.stringify({ currentUrl }));
     });
 
-    test('Review Details', async () => {
+    test('Submit Application and Review Details', async () => {
         await page.goto(currentUrl);
 
         const reviewUrl = await review.submitApplication();
@@ -137,8 +137,8 @@ test.describe.serial('Scholarship Application Tests', () => {
     });
 
     test.afterEach(async () => {
-        await page.close();   // Close the page
-        await context.close(); // Close the browser context
+        await page.close();
+        await context.close();
     });
 
     test.afterAll(async () => {

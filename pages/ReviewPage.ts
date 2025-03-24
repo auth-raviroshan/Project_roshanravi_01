@@ -32,13 +32,13 @@ export class ReviewPage {
         return pageUrl;
     }
 
-    async getCurrentPage(locator:Locator): Promise<string> {
+    async getCurrentPage(locator: Locator): Promise<string> {
         await this.page.waitForTimeout(3000);
         await Promise.all([
             this.page.waitForNavigation({ timeout: 10000 }),
-            locator.click() 
+            locator.click()
         ]);
         return this.page.url();
     }
-    
+
 }

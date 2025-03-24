@@ -49,10 +49,10 @@ export class ApplicationFormPage {
         this.leadership = page.getByRole('textbox', { name: 'List any leadership roles' });
         this.description = page.getByRole('textbox', { name: 'Description of Involvement' });
         this.addActivity = page.getByRole('button', { name: 'Add' });
-        this.addEntry=page.locator('//span[text()="Add Entry"]');
-        this.assertActivity=page.locator('#form-renderer');
-        this.nextPage=page.getByRole('button', { name: 'Next Page' });
-        this.fileUpload=page.locator('button:has-text("Upload File")');
+        this.addEntry = page.locator('//span[text()="Add Entry"]');
+        this.assertActivity = page.locator('#form-renderer');
+        this.nextPage = page.getByRole('button', { name: 'Next Page' });
+        this.fileUpload = page.locator('button:has-text("Upload File")');
 
 
     }
